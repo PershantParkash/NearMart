@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { StoreModule } from './store/store.module';
 import { getDatabaseConfig } from './config/database.config';
 
 @Module({
@@ -15,6 +16,7 @@ import { getDatabaseConfig } from './config/database.config';
       useFactory: getDatabaseConfig,
     }),
     AuthModule,
+    StoreModule,
   ],
 })
 export class AppModule {}
